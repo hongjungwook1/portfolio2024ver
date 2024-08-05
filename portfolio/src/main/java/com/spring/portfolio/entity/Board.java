@@ -14,7 +14,7 @@ public class Board {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private Integer id;
+	private int id;
 	
 	private String title;
 	
@@ -22,14 +22,14 @@ public class Board {
 	
 	private String password;
 
-	public String getTitle() {
-		return title;
+	public int getId() {
+		return id;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	
+	public void setId(int id) {
+		this.id = id;
 	}
-
+	
 	public String getPassword() {
 		return password;
 	}
@@ -46,6 +46,13 @@ public class Board {
 		this.contents = contents;
 	}
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	
 
 	
