@@ -7,5 +7,4 @@ import com.spring.portfolio.entity.Board;
 
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Integer>{
-
 }

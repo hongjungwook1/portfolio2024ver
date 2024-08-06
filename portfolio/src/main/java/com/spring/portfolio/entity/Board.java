@@ -21,7 +21,9 @@ public class Board {
 	private String contents;
 	
 	private String password;
-
+	
+	private String name;
+	
 	public int getId() {
 		return id;
 	}
@@ -52,6 +54,14 @@ public class Board {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 

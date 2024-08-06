@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>게시판 등록</title>
-	<style>
-	    .layout {
-	    	width : 500px;
-	    	margin : 0 auto;
-	    }
-	    .layout input{
-	    	width : 100%;
-	    	margin-top : 10px;
-	    	box-sizing : border-box;
-	    }
-	    .layout textarea{
-	    
-	    	width : 100%;
-	    	margin-top : 10px;
-	    	min-height : 200px;
-	    	box-sizing : border-box;
-	    }
+<meta charset="UTF-8">
+<title>게시판 등록</title>
+<style>
+    .layout {
+    	width : 500px;
+    	margin : 0 auto;
+    }
+    .layout input{
+    	width : 100%;
+    	margin-top : 10px;
+    	box-sizing : border-box;
+    }
+    .layout textarea{
+    
+    	width : 100%;
+    	margin-top : 10px;
+    	min-height : 200px;
+    	box-sizing : border-box;
+    }
 
-	    
-	</style>
-	
-	
+    
+</style>
+
 </head>
 <body>
 	<div class="layout">
 		<h2>게시판 등록</h2>
-		<form id="frm" name="frm" method="post" action="/board/insertBoard">
-			<table class="board_detail">
+		<form method="post" action="/board/insertBoard">
+			<table>
 				<tr>
 					<td>제목</td>
 					<td><input type="text" id="title" name="title"></td>

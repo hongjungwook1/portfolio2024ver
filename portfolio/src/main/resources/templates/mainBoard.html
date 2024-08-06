@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +27,23 @@
     .title {
         width: 500px;
     }
+    .name{
+    	width: 50px;
+    }
     .body {
         text-align: center;
     }
     .body .title {
         text-align: left;
+    }
+    .num {
+        width: 50px;
+    }
+    .title {
+        width: 500px;
+    }
+    .name{
+    	width: 50px;
     }
     button {
         width: 100px;
@@ -63,9 +75,24 @@
 		    <tr class="header">
 		        <td class="num">번호</td>
 		        <td class="title">제목</td>
+		        <td class="name">작성자</td>
 		    </tr>
 		</table>
+		
 		<br>
+		
+		<table class="table">
+		    <tr class="body" th:each="board : ${list}">
+					<td class="num" th:text="${board.id}"> 번호 </td>
+					<td> 
+						<a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"> 제목 </a> 
+					</td>
+					<td class="name" th:text="${board.name}"></td>
+			</tr>
+		</table>
+		
+		<br>
+		
 		<table>
 		    <tr>
 		        <td><button type="submit">글쓰기</button></td>
