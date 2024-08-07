@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring.portfolio.entity.Board;
@@ -11,13 +12,17 @@ import com.spring.portfolio.repository.BoardRepository;
 
 @Service
 public class BoardService {
-
+	
 	@Autowired
 	private BoardRepository boardRepository;
+	
+	@Autowired
+	private PasswordEncoder pWEncoder;
 	
 	// 글 작성
 	public void write(Board board) {
 		board.setName(generateRandomAuthor());
+		board.setPassword(pWEncoder.encode(board.getPassword()));
 		boardRepository.save(board);
 	}
 	
@@ -48,5 +53,6 @@ public class BoardService {
 	public void boardDelete(Integer id) {
 		boardRepository.deleteById(id);
 	}
+	
 	
 }
